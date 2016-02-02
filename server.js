@@ -26,8 +26,10 @@ require('./JS/assignmodels.js')
 app.engine('ejs', engine);
 app.set('views', __dirname + '/App/Views');
 app.set('view engine', 'ejs'); // set up ejs for templating
-var bodyParser  = require("body-parser"),
-app.use(bodyParser())
+var bodyParser  = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
 //app.use(express.static(__dirname + '/public'));
 
 require('./App/routes.js')(app)
