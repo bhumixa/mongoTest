@@ -3,6 +3,9 @@ var js = require('./JS/utilities.js')
 var http = require('http');
 var app = express();
 var engine = require('ejs-locals');
+var bodyParser  = require("body-parser");
+var session      = require('express-session');
+
 global.appRoot = path.resolve(__dirname);
 
 mongoose.connect(config.url, {server: {auto_reconnect: true,  poolSize: 10 }}, function(err) {    
@@ -26,17 +29,27 @@ require('./JS/assignmodels.js')
 app.engine('ejs', engine);
 app.set('views', __dirname + '/App/Views');
 app.set('view engine', 'ejs'); // set up ejs for templating
-var bodyParser  = require("body-parser");
+
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-
+app.use(session({ secret: 'ilovescotchscotchyscotchscotch' ,
+    resave: true,
+    saveUninitialized: true
+})); // session secret
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
 //app.use(express.static(__dirname + '/public'));
-
+require('./JS/passport.js')(passport);
 require('./App/routes.js')(app)
-/*var attendance = new Attendance();
-attendance.id = '3';
-attendance.name = 'Bhavu';
-attendance.save(function (err) {
+
+
+
+/*var user = new User();
+user.id = '2';
+user.name = 'bhavu';
+user.password = "bhavu"
+user.save(function (err) {
 	if (err) {
 		console.log(err);
 	}else{
@@ -45,12 +58,12 @@ attendance.save(function (err) {
 });*/
 
 
-Attendance.find().exec(function(err,data){ 
+/*Attendance.find().exec(function(err,data){ 
 	if(data){
 		console.log(data)
 	}
 });
-
+*/
 
 process.on('uncaughtException', function (err) {
   console.error(err.stack);

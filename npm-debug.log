@@ -1,0 +1,73 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', 'exconnect-flash' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.37
+4 verbose node symlink /usr/bin/node
+5 warn package.json mongoapp@10.3.1 No repository field.
+6 warn package.json mongoapp@10.3.1 No README data
+7 warn package.json passport@0.3.2 No README data
+8 warn package.json path@0.12.7 path is also the name of a node core module.
+9 verbose readDependencies using package.json deps
+10 verbose cache add [ 'exconnect-flash', null ]
+11 verbose cache add name=undefined spec="exconnect-flash" args=["exconnect-flash",null]
+12 verbose parsed url { protocol: null,
+12 verbose parsed url   slashes: null,
+12 verbose parsed url   auth: null,
+12 verbose parsed url   host: null,
+12 verbose parsed url   port: null,
+12 verbose parsed url   hostname: null,
+12 verbose parsed url   hash: null,
+12 verbose parsed url   search: null,
+12 verbose parsed url   query: null,
+12 verbose parsed url   pathname: 'exconnect-flash',
+12 verbose parsed url   path: 'exconnect-flash',
+12 verbose parsed url   href: 'exconnect-flash' }
+13 silly lockFile 6baeeed9-exconnect-flash exconnect-flash
+14 verbose lock exconnect-flash /home/bhavin/.npm/6baeeed9-exconnect-flash.lock
+15 silly lockFile 6baeeed9-exconnect-flash exconnect-flash
+16 silly lockFile 6baeeed9-exconnect-flash exconnect-flash
+17 verbose addNamed [ 'exconnect-flash', '' ]
+18 verbose addNamed [ null, '*' ]
+19 silly lockFile f694951e-exconnect-flash exconnect-flash@
+20 verbose lock exconnect-flash@ /home/bhavin/.npm/f694951e-exconnect-flash.lock
+21 silly addNameRange { name: 'exconnect-flash', range: '*', hasData: false }
+22 verbose request where is /exconnect-flash
+23 verbose request registry http://registry.npmjs.org/
+24 verbose request id 50ad1d8a8e42eb92
+25 verbose url raw /exconnect-flash
+26 verbose url resolving [ 'http://registry.npmjs.org/', './exconnect-flash' ]
+27 verbose url resolved http://registry.npmjs.org/exconnect-flash
+28 verbose request where is http://registry.npmjs.org/exconnect-flash
+29 info trying registry request attempt 1 at 18:13:32
+30 http GET http://registry.npmjs.org/exconnect-flash
+31 http 404 http://registry.npmjs.org/exconnect-flash
+32 silly registry.get cb [ 404,
+32 silly registry.get   { 'content-type': 'application/json',
+32 silly registry.get     'cache-control': 'max-age=0',
+32 silly registry.get     'content-length': '2',
+32 silly registry.get     'accept-ranges': 'bytes',
+32 silly registry.get     date: 'Tue, 02 Feb 2016 12:43:33 GMT',
+32 silly registry.get     via: '1.1 varnish',
+32 silly registry.get     age: '0',
+32 silly registry.get     connection: 'keep-alive',
+32 silly registry.get     'x-served-by': 'cache-fra1232-FRA',
+32 silly registry.get     'x-cache': 'MISS',
+32 silly registry.get     'x-cache-hits': '0',
+32 silly registry.get     'x-timer': 'S1454417013.401692,VS0,VE101' } ]
+33 silly lockFile f694951e-exconnect-flash exconnect-flash@
+34 silly lockFile f694951e-exconnect-flash exconnect-flash@
+35 error 404 Not Found
+35 error 404
+35 error 404 'exconnect-flash' is not in the npm registry.
+35 error 404 You should bug the author to publish it
+35 error 404 It was specified as a dependency of 'mongoapp'
+35 error 404
+35 error 404 Note that you can also install from a
+35 error 404 tarball, folder, or http url, or git url.
+36 error System Linux 3.5.0-61-generic
+37 error command "/usr/bin/node" "/usr/bin/npm" "install" "exconnect-flash"
+38 error cwd /home/bhavin/Documents/bhumi/tutorials/app
+39 error node -v v0.10.37
+40 error npm -v 1.4.28
+41 error code E404
+42 verbose exit [ 1, true ]

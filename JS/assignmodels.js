@@ -1,2 +1,2 @@
 //models
-global.Attendance = mongoose.model('Attendance');
+global.User = mongoose.model('User');

@@ -8,6 +8,10 @@
 	"async":"latest",
 	"moment":"latest",
 	"path":"latest",
-	"ejs-locals":"latest"
+	"ejs-locals":"latest",
+	"passport" : "latest",
+    "passport-local" : "latest",
+    "express-session": "latest",
+    "connect-flash":"latest"
  	}
 }
