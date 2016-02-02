@@ -7,6 +7,8 @@
 	"mongoose":"latest",
 	"async":"latest",
 	"moment":"latest",
-	"path":"latest"
+	"path":"latest",
+	"ejs":"latest",
+	"ejs-locals":"latest"
  	}
 }

@@ -18,23 +18,39 @@ fs.readdirSync(models_path).forEach(function (file) {
 		if (~file.indexOf('.js')) require(models_path + '/' + file)
 })
 
-var Attendance = mongoose.model('Attendance');
-var attendance = new Attendance();
-/*attendance.id = '2';
-attendance.name = 'Kalps';
+require('./JS/assignmodels.js')
+var engine = require('ejs-locals');
+
+app.configure(function() {
+	app.engine('ejs', engine);
+	app.set('views', __dirname + '/App/Views');
+	app.set('view engine', 'ejs'); // set up ejs for templating
+	//app.use(express.static(__dirname + '/public'));
+});
+require('./App/routes.js')(app)
+/*var attendance = new Attendance();
+attendance.id = '3';
+attendance.name = 'Bhavu';
 attendance.save(function (err) {
 	if (err) {
 		console.log(err);
 	}else{
 		console.log('in')
 	}
-});
-*/
+});*/
+
 
 Attendance.find().exec(function(err,data){ 
 	if(data){
 		console.log(data)
 	}
+});
+
+
+process.on('uncaughtException', function (err) {
+  console.error(err.stack);
+  console.log(err)
+  console.log("Node NOT Exiting...");
 });
 
 var server = app.listen(process.env.PORT || 6000, function() {
