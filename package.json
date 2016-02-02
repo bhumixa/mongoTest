@@ -8,7 +8,6 @@
 	"async":"latest",
 	"moment":"latest",
 	"path":"latest",
-	"ejs":"latest",
 	"ejs-locals":"latest"
  	}
 }

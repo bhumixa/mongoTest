@@ -2,6 +2,7 @@ var express = require('express');   //Express Web Server
 var js = require('./JS/utilities.js')
 var http = require('http');
 var app = express();
+var engine = require('ejs-locals');
 global.appRoot = path.resolve(__dirname);
 
 mongoose.connect(config.url, {server: {auto_reconnect: true,  poolSize: 10 }}, function(err) {    
@@ -19,14 +20,16 @@ fs.readdirSync(models_path).forEach(function (file) {
 })
 
 require('./JS/assignmodels.js')
-var engine = require('ejs-locals');
 
-app.configure(function() {
-	app.engine('ejs', engine);
-	app.set('views', __dirname + '/App/Views');
-	app.set('view engine', 'ejs'); // set up ejs for templating
-	//app.use(express.static(__dirname + '/public'));
-});
+
+
+app.engine('ejs', engine);
+app.set('views', __dirname + '/App/Views');
+app.set('view engine', 'ejs'); // set up ejs for templating
+var bodyParser  = require("body-parser"),
+app.use(bodyParser())
+//app.use(express.static(__dirname + '/public'));
+
 require('./App/routes.js')(app)
 /*var attendance = new Attendance();
 attendance.id = '3';
@@ -53,6 +56,6 @@ process.on('uncaughtException', function (err) {
   console.log("Node NOT Exiting...");
 });
 
-var server = app.listen(process.env.PORT || 6000, function() {
+var server = app.listen(process.env.PORT || 4000, function() {
   console.log('Listening on port %d', server.address().port);
 });
