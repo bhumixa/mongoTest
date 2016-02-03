@@ -39,7 +39,7 @@ app.use(session({ secret: 'ilovescotchscotchyscotchscotch' ,
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-//app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/Public'));
 require('./JS/passport.js')(passport);
 require('./App/routes.js')(app)
 
