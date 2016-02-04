@@ -10,6 +10,6 @@ userSchema.methods.validPassword = function(password) {
     }else{
     	return true;
     }
-};
+}; //check password
 
 module.exports = mongoose.model('User', userSchema, 'user');
