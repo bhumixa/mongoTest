@@ -65,6 +65,37 @@ user.save(function (err) {
 });
 */
 
+/*stripe.customers.create({
+  email: 'bhumi.patel03@yahoo.com'
+}).then(function(customer) {
+  return stripe.charges.create({
+    amount: 3200,
+    currency: 'usd',
+    source: "tok_17cuLMFXW7mzC5WUOwtBMqDj",
+  });
+}).then(function(charge) {
+  console.log('charge' + charge)
+  // New charge created on a new customer 
+}).catch(function(err) {
+  console.log(err)
+  // Deal with an error 
+});*/
+
+/*stripe.products.create({
+  name: 'T-shirt',
+  description: 'Comfortable gray cotton t-shirts',
+  attributes: ['size', 'gender']
+}, function(err, product) {
+  console.log(JSON.parse(product))
+  // asynchronously called
+});*/
+
+stripe.products.del("prod_7sfyhP1O8LGcnj",
+  function(err, confirmation) {
+    console.log(confirmation)
+    // asynchronously called
+  }
+);
 process.on('uncaughtException', function (err) {
   console.error(err.stack);
   console.log(err)
